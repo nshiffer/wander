@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomadic Journey</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="#">Nomadic Journey</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <!-- Additional nav items here -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1 class="text-center">Discover Austin</h1>
+        <p class="lead text-center">Explore the best of Austin from restaurants to fun spots and more!</p>
+
+        <!-- Categories Section -->
+        <section id="restaurants" class="mt-4">
+            <h2>Restaurants</h2>
+            <!-- Restaurant Listings -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Distant Relatives</h5>
+                    <p class="card-text">Food truck in Meanwhile Brewing Co.</p>
+                    
+                    <!-- Cost -->
+                    <div class="cost">
+                        <span>Cost: $$</span>
+                    </div>
+            
+                    <!-- Get Section -->
+                    <div class="get-section">
+                        <strong>Get:</strong>
+                        <ul>
+                            <li>Quarter Chicken</li>
+                            <li>Brisket Sandwich</li>
+                        </ul>
+                    </div>
+            
+                    <!-- Skip Section (Shown only if score is low) -->
+                    <div class="skip-section">
+                        <strong>Skip:</strong>
+                        <ul>
+                            <li>Sausage</li>
+                        </ul>
+                    </div>
+            
+                    <!-- Notes -->
+                    <div class="notes">
+                        <strong>Notes:</strong>
+                        <p>Closed some weekdays, runs out of some items around 6pm.</p>
+                    </div>
+            
+                    <!-- Score -->
+                    <span class="badge badge-success">Score: 9/10</span>
+                </div>
+            </div>
+            
+            <!-- Add more listings here -->
+        </section>
+
+        <!-- Similar sections for Events, Work from Home Spots, Fun Spots, Bars, Areas to Live/Avoid -->
+
+        <!-- Example for Areas to Live/Avoid with 'Skip' Tag -->
+        <section id="areas" class="mt-4">
+            <h2>Areas to Live/Avoid</h2>
+            <!-- Area Listings -->
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Downtown Austin</h5>
+                    <p class="card-text">The heart of the city with vibrant nightlife and music scenes.</p>
+                    <span class="badge badge-danger">Score: 4/10 - Skip</span>
+                </div>
+            </div>
+            <!-- Add more listings here -->
+        </section>
+    </div>
+
+    <footer class="footer mt-5 py-3 bg-dark">
+        <div class="container text-center">
+            <p>Follow us on social media:</p>
+            <div>
+                <!-- Example Social Media Icons -->
+                <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+            </div>
+            <span class="text-muted">© 2024 Nomadic Journey</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/your-kit-code.js"></script>
+</body>
+</html>

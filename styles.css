@@ -1,0 +1,46 @@
+body {
+    background-color: #fff; /* White background for a clean look */
+    color: #333; /* Darker text for contrast */
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.navbar-brand {
+    font-weight: bold; /* Emphasize the brand */
+}
+
+.city-card {
+    transition: transform 0.3s ease-in-out; /* Smooth transform on hover */
+}
+
+.city-card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.card-img-top {
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Ensure images cover the card area */
+}
+
+.footer {
+    background-color: #333; /* Dark footer for contrast */
+    color: #fff; /* White text in footer */
+}
+
+.card .cost span {
+    font-weight: bold;
+    color: #28a745; /* Green color for cost indication */
+}
+
+.card .get-section, .card .skip-section, .card .notes {
+    margin-top: 10px;
+}
+
+.card .get-section strong, .card .skip-section strong, .card .notes strong {
+    font-weight: bold;
+}
+
+/* Adjust the colors, fonts, and spacing as per your design theme */
+
