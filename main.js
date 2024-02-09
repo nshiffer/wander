@@ -3,6 +3,7 @@ import FooterComponent from './FooterComponent.js';
 import TabComponent from './TabComponent.js';
 import RestaurantComponent from './RestaurantComponent.js';
 import GeneralInfoComponent from './GeneralInfoComponent.js';
+import CityInfoComponent from './CityInfoComponent.js';
 
 austinData = {
     generalInfo: { traffic: 'low', temperature: 90, costOfLiving: 'high' },
@@ -37,6 +38,7 @@ const app = Vue.createApp({
         };
     },
     components: {
+        'city-info-component': CityInfoComponent,
         'general-info-component': GeneralInfoComponent,
         'tab-component': TabComponent,
         'restaurant-component': RestaurantComponent,
