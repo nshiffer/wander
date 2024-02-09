@@ -55,4 +55,4 @@ const RestaurantComponent = {
     }
 };
 
-export { RestaurantComponent };
+export default RestaurantComponent;

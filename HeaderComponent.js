@@ -19,4 +19,4 @@ const HeaderComponent = {
     `
 };
 
-export { HeaderComponent };
+export default HeaderComponent ;

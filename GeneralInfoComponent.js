@@ -71,4 +71,4 @@ const GeneralInfoComponent = {
         }
     }    
 };
-export { GeneralInfoComponent };
+export default GeneralInfoComponent;

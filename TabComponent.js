@@ -19,4 +19,4 @@ const TabComponent = {
     }
 };
 
-export { TabComponent };
+export default TabComponent;

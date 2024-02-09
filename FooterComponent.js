@@ -14,4 +14,4 @@ const FooterComponent = {
     </div>
     `
 };
-export { FooterComponent };
+export default FooterComponent;
