@@ -1,8 +1,8 @@
-import { TabComponent } from "./TabComponent";
-import { GeneralInfoComponent } from "./GeneralInfoComponent";
-import { RestaurantComponent } from "./RestaurantComponent";
-import { HeaderComponent } from "./HeaderComponent";
-import { FooterComponent } from "./FooterComponent";
+import HeaderComponent from './HeaderComponent.js';
+import FooterComponent from './FooterComponent.js';
+import TabComponent from './TabComponent.js';
+import RestaurantComponent from './RestaurantComponent.js';
+import GeneralInfoComponent from './GeneralInfoComponent.js';
 
 austinData = {
     generalInfo: { traffic: 'low', temperature: 90, costOfLiving: 'high' },
