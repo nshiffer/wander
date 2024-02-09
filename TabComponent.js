@@ -1,6 +1,6 @@
 import { RestaurantComponent } from './RestaurantComponent.js';
 import { GeneralInfoComponent } from './GeneralInfoComponent.js';
-export const TabComponent = {
+const TabComponent = {
     props: ['tab'],
     template: `
         <div class="tab-pane">
@@ -18,3 +18,5 @@ export const TabComponent = {
         // 'area-component': AreaComponent
     }
 };
+
+export { TabComponent };

@@ -1,4 +1,4 @@
-export const RestaurantComponent = {
+const RestaurantComponent = {
     props: ['item'],
     template: `
         <div class="card mb-3 shadow-lg">
@@ -54,3 +54,5 @@ export const RestaurantComponent = {
         }
     }
 };
+
+export { RestaurantComponent };

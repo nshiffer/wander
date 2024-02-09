@@ -1,6 +1,6 @@
 import { TabComponent } from './TabComponent.js';
 
-export const CityInfoComponent = {
+const CityInfoComponent = {
     template: `
         <div>
             <ul class="nav nav-tabs">
@@ -30,3 +30,5 @@ export const CityInfoComponent = {
         'tab-component': TabComponent
     }
 };
+
+export { CityInfoComponent };

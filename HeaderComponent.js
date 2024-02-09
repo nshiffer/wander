@@ -1,4 +1,4 @@
-export const HeaderComponent = {
+const HeaderComponent = {
     template: `
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
@@ -18,3 +18,5 @@ export const HeaderComponent = {
     </nav>
     `
 };
+
+export { HeaderComponent };

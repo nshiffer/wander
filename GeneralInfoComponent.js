@@ -1,4 +1,4 @@
-export const GeneralInfoComponent = {
+const GeneralInfoComponent = {
     props: ['info'],
     template: `
         <div>
@@ -71,3 +71,4 @@ export const GeneralInfoComponent = {
         }
     }    
 };
+export { GeneralInfoComponent };

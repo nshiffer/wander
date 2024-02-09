@@ -1,4 +1,4 @@
-export const FooterComponent = {
+const FooterComponent = {
     template: `
     <div class="footer mt-5 py-3 bg-dark">
         <div class="container text-center">
@@ -13,4 +13,5 @@ export const FooterComponent = {
         </div>
     </div>
     `
-}
+};
+export { FooterComponent };
