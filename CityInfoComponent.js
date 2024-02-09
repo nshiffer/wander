@@ -1,4 +1,4 @@
-import { TabComponent } from './TabComponent.js';
+import TabComponent from './TabComponent.js';
 
 const CityInfoComponent = {
     template: `
@@ -31,4 +31,4 @@ const CityInfoComponent = {
     }
 };
 
-export { CityInfoComponent };
+export default CityInfoComponent;

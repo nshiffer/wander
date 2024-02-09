@@ -1,5 +1,5 @@
 import { RestaurantComponent } from './RestaurantComponent.js';
-import { GeneralInfoComponent } from './GeneralInfoComponent.js';
+import GeneralInfoComponent from './GeneralInfoComponent.js';
 const TabComponent = {
     props: ['tab'],
     template: `
