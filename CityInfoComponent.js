@@ -36,7 +36,7 @@ const CityInfoComponent = {
                 ] }
 
             ],
-            currentTab: tabs[0]
+            currentTab: null
         };
     },
     components: {
