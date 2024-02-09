@@ -9,7 +9,7 @@ const CityInfoComponent = {
                 </li>
             </ul>
             <div class="tab-content">
-                <tab-component v-if="currentTab" :tab="currentTab"></tab-component>
+                <tab-component v-for="tab in tabs" :key="tab.name" :tab="tab" v-if="currentTab === tab"></tab-component>
             </div>
         </div>
     `,
@@ -36,7 +36,7 @@ const CityInfoComponent = {
                 ] }
 
             ],
-            currentTab: null
+            currentTab: tabs[0]
         };
     },
     components: {
