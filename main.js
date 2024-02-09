@@ -5,7 +5,7 @@ import RestaurantComponent from './RestaurantComponent.js';
 import GeneralInfoComponent from './GeneralInfoComponent.js';
 import CityInfoComponent from './CityInfoComponent.js';
 
-austinData = {
+const austinData = {
     generalInfo: { traffic: 'low', temperature: 90, costOfLiving: 'high' },
     restaurants: [
         { name: 'Distant Relatives', description: 'Food truck in Meanwhile Brewing Co.', cost: '$$', get: ['Quarter Chicken', 'Brisket Sandwich'] },
