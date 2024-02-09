@@ -8,78 +8,62 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="HeaderComponent.js"></script>
+    <script src="FooterComponent.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Work and Wander</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <!-- Additional nav items here -->
-                </ul>
+    <div id="app">
+        <header-component></header-component>
+
+        <header class="jumbotron jumbotron-fluid text-center">
+            <div class="container">
+                <h1 class="display-4">Follow as we explore the world</h1>
+                <p class="lead">Two 20-somethings working remotely and traveling the world</p>
             </div>
-        </div>
-    </nav>
+        </header>
 
-    <header class="jumbotron jumbotron-fluid text-center">
-        <div class="container">
-            <h1 class="display-4">Follow as we explore the world</h1>
-            <p class="lead">Two 20-somethings working remotely and traveling the world</p>
-        </div>
-    </header>
+        <!-- Map Container -->
+        <div id="map" style="height: 500px;" class="container mt-5"></div>
 
-    <!-- Map Container -->
-    <div id="map" style="height: 500px;" class="container mt-5"></div>
+        <footer-component></footer-component>
+        <script>
+            const app = Vue.createApp({});
+            app.component('header-component', HeaderComponent);
+            app.component('footer-component', FooterComponent);
+            app.mount('#app');
+        </script>
 
-    <footer class="footer mt-5 py-3 bg-dark">
-        <div class="container text-center">
-            <p>Follow us on social media:</p>
-            <div>
-                <!-- Example Social Media Icons -->
-                <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
-            </div>
-            <span class="text-muted">© 2024 Nomadic Journey</span>
-        </div>
-    </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- FontAwesome for Icons -->
+        <script src="https://kit.fontawesome.com/your-kit-code.js"></script>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+        <script>
+            var map = L.map('map').setView([37.8, -96], 4); // Center on the US
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <!-- FontAwesome for Icons -->
-    <script src="https://kit.fontawesome.com/your-kit-code.js"></script>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script>
-        var map = L.map('map').setView([37.8, -96], 4); // Center on the US
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
+            // Example Marker for Austin with HTMX Integration
+            var austinMarker = L.marker([30.2672, -97.7431]).addTo(map);
+            austinMarker.bindPopup('<b>Austin, TX</b><br><a href="austin.html" hx-get="austin.html" hx-trigger="click">Explore Austin</a>');
 
-        // Example Marker for Austin with HTMX Integration
-        var austinMarker = L.marker([30.2672, -97.7431]).addTo(map);
-        austinMarker.bindPopup('<b>Austin, TX</b><br><a href="austin.html" hx-get="austin.html" hx-trigger="click">Explore Austin</a>');
+            var atlantaMarker = L.marker([33.7490, -84.3880]).addTo(map);
+            atlantaMarker.bindPopup('<b>Atlanta, GA</b><br><a href="#" hx-get="atlanta.html" hx-trigger="click">Explore Atlanta</a>');
 
-        var atlantaMarker = L.marker([33.7490, -84.3880]).addTo(map);
-        atlantaMarker.bindPopup('<b>Atlanta, GA</b><br><a href="#" hx-get="atlanta.html" hx-trigger="click">Explore Atlanta</a>');
+            var raleighMarker = L.marker([35.7796, -78.6382]).addTo(map);
+            raleighMarker.bindPopup('<b>Raleigh, NC</b><br><a href="#" hx-get="raleigh.html" hx-trigger="click">Explore Raleigh</a>');
 
-        var raleighMarker = L.marker([35.7796, -78.6382]).addTo(map);
-        raleighMarker.bindPopup('<b>Raleigh, NC</b><br><a href="#" hx-get="raleigh.html" hx-trigger="click">Explore Raleigh</a>');
+            var columbusMarker = L.marker([39.9612, -82.9988]).addTo(map);
+            columbusMarker.bindPopup('<b>Columbus, OH</b><br><a href="#" hx-get="columbus.html" hx-trigger="click">Explore Columbus</a>');
 
-        var columbusMarker = L.marker([39.9612, -82.9988]).addTo(map);
-        columbusMarker.bindPopup('<b>Columbus, OH</b><br><a href="#" hx-get="columbus.html" hx-trigger="click">Explore Columbus</a>');
-
-        
-        // Repeat for other cities as needed
-    </script>
+            
+            // Repeat for other cities as needed
+        </script>
+    </div>
 </body>
 </html>

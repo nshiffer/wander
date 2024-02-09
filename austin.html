@@ -1,289 +1,70 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nomadic Journey</title>
+    <!-- Include necessary meta tags, styles, and scripts -->
+    <title>Austin - Nomadic Journey</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Include your component scripts -->
+    <script type="module" src="CityInfoComponent.js"></script>
+    <script type="module" src="TabComponent.js"></script>
+    <script type="module" src="RestaurantComponent.js"></script>
+    <script type="module" src="GeneralInfoComponent.js"></script>
+    <script type="module" src="HeaderComponent.js"></script>
+    <script src="FooterComponent.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container">
-            <a class="navbar-brand" href="#">Nomadic Journey</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <!-- Additional nav items here -->
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div id="app">
+        <header-component></header-component>
+        <city-info-component :tabs="austinTabs"></city-info-component>
+        <footer-component></footer-component>
+    </div>
 
-    <div class="container mt-4">
-        <h1 class="text-center">Discover Austin</h1>
-        <p class="lead text-center">Explore the best of Austin from restaurants to fun spots and more!</p>
-    
-            <!-- Tab Navigation -->
-            <ul class="nav nav-tabs" id="cityInfoTabs" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" id="restaurants-tab" data-toggle="tab" href="#restaurants" role="tab" aria-controls="restaurants" aria-selected="true">Restaurants</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="events-tab" data-toggle="tab" href="#events" role="tab" aria-controls="events" aria-selected="false">Events</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="bars-tab" data-toggle="tab" href="#bars" role="tab" aria-controls="bars" aria-selected="false">Bars</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="fun-spots-tab" data-toggle="tab" href="#fun-spots" role="tab" aria-controls="fun-spots" aria-selected="false">Fun Spots</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="areas-tab" data-toggle="tab" href="#areas" role="tab" aria-controls="areas" aria-selected="false">Areas</a>
-                </li>
-            </ul>
-    
-            <!-- Tab Content -->
-            <div class="tab-content" id="cityInfoTabsContent">
-                <div class="tab-pane fade show active" id="restaurants" role="tabpanel" aria-labelledby="restaurants-tab">
-                    <!-- Restaurants Content Here -->
-                    <section id="restaurants" class="mt-4">
-                        <h2>Restaurants</h2>
-                        <!-- Restaurant Listings -->
-                        <div class="card mb-3 shadow-lg">
-                            <div class="card-body">
-                                <div class="row">
-                                    <!-- Column 1: Basic Info -->
-                                    <div class="col-md-6">
-                                        <h5 class="card-title">Distant Relatives</h5>
-                                        <p class="card-text">African Inspire BBQ Food Truck</p>
-                                        <a href="https://www.distatantrelativesatx.com/" target="_blank" class="btn btn-primary btn-sm">Website</a>
-                                    </div>
-                        
-                                    <!-- Column 2: Details -->
-                                    <div class="col-md-6">
-                                        <!-- Cost -->
-                                        <div class="mb-2">
-                                            <!-- Cost -->
-                                            <div class="cost">
-                                                <span>Cost: $-$$</span>
-                                            </div>
-                                        </div>
-                        
-                                        <!-- Get Section -->
-                                        <div class="mb-2">
-                                            <strong>Get:</strong>
-                                            <ul>
-                                                <li>Quarter Chicken</li>
-                                                <li>Brisket Sandwich</li>
-                                            </ul>
-                                        </div>
-                                        <div class="mb-2">
-                                            <strong>Skip:</strong>
-                                            <ul>
-                                                <li>Sausage</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                        
-                                <!-- Notes and Score -->
-                                <div class="mt-3 d-flex justify-content-between">
-                                    <div>
-                                        <strong>Notes:</strong>
-                                        <p>Food truck in Meanwhile Brewing Co. Closed some weekdays, runs out of some items around 6pm.</p>
-                                    </div>
-                                    <div>
-                                        <span class="badge badge-success">Score: 9/10</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-            
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title">Ramen Tatsu-Ya</h5>
-                                <p class="card-text">Japanese noodle soup shop.</p>
-                                
-                                <!-- Cost -->
-                                <div class="cost">
-                                    <span>Cost: $$</span>
-                                </div>
-                        
-                                <!-- Get Section -->
-                                <div class="get-section">
-                                    <strong>Get:</strong>
-                                    <ul>
-                                        <li>Miso Hot</li>
-                                        <li>Sho-Yu</li>
-                                    </ul>
-                                </div>
-                        
-                                <!-- Skip Section (Shown only if score is low) -->
-                                <div class="skip-section">
-                                    <strong>Skip:</strong>
-                                    <ul>
-                                        <li>Tsukemen</li>
-                                    </ul>
-                                </div>
-                        
-                                <!-- Notes -->
-                                <div class="notes">
-                                    <strong>Notes:</strong>
-                                    <p>Multiple locations, great ramen</p>
-                                </div>
-                        
-                                <!-- Score -->
-                                <span class="badge badge-success">Score: 8/10</span>
-                            </div>
-                        </div>
-                        
-                        <!-- Add more listings here -->
-                    </section>
-                </div>
-                <div class="tab-pane fade" id="events" role="tabpanel" aria-labelledby="events-tab">
-                    <section id="events" class="mt-4">
-                        <h2>Events</h2>
-                        <!-- Event Listings -->
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title">Austin City Limits</h5>
-                                <p class="card-text">Annual music festival in Zilker Park. Big names and local artists.</p>
-                                <span class="badge badge-success">Score: 9/10</span>
-                            </div>
-                        </div>
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title">SXSW</h5>
-                                <p class="card-text">Annual music, film, and interactive festival. Lots of free events and open bars.</p>
-                                <span class="badge badge-success">Score: 10/10</span>
-                            </div>
-                        </div>
-                        <!-- Add more listings here -->
-                    </section>
-                </div>
-                <div class="tab-pane fade" id="bars" role="tabpanel" aria-labelledby="bars-tab">
-                    <!-- Bars Content Here -->
-                    <section id="bars" class="mt-4">
-                        <h2>Bars</h2>
-                        <!-- Bar Listings -->
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title">Garage</h5>
-                                <p class="card-text">Speakeasy in a parking garage. Great for a date night. Drinks are a little expensive, go for happy hour.</p>
-                                <span class="badge badge-success">Score: 8/10</span>
-                            </div>
-                        </div>
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title">Latchkey</h5>
-                                <p class="card-text">Great for a night out with friends. Darty vibes.</p>
-                                <span class="badge badge-success">Score: 7/10</span>
-                            </div>
-                        </div>
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title">Whisler's</h5>
-                                <p class="card-text">Great cocktails and outdoor patio. Can be loud in the winter</p>
-                                <span class="badge badge-success">Score: 6.5/10</span>
-                            </div>
-                        </div>
-                        <!-- Add more listings here -->
-                    </section>
-                </div>
-                <div class="tab-pane fade" id="fun-spots" role="tabpanel" aria-labelledby="fun-spots-tab">
-                    <!-- Fun Spots Content Here -->
-                    <section id="things-to-do" class="mt-4">
-                        <h2>Fun Spots</h2>
-                        <!-- Fun Spot Listings -->
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title">Barton Springs Pool</h5>
-                                <p class="card-text">Natural spring-fed pool in Zilker Park. Great for a hot day. Can get crowded. Very cold water. Paid entry.</p>
-                                <span class="badge badge-success">Score: 7/10</span>
-                            </div>
-                        </div>
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title">Mount Bonnell</h5>
-                                <p class="card-text">Great views of the city. Short hike to the top. Can be crowded.</p>
-                                <span class="badge badge-success">Score: 8/10</span>
-                            </div>
-                        </div>
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title">Zilker Park</h5>
-                                <p class="card-text">Good view of the city. But underwhelming for the city's main park.</p>
-                                <span class="badge badge-danger">Score: 5/10</span>
-                            </div>
-                        </div>
-                        <!-- Add more listings here -->
-                    </section>
-                </div>
-                <div class="tab-pane fade" id="areas" role="tabpanel" aria-labelledby="areas-tab">
-                    <!-- Areas Content Here -->
-                    <section id="areas" class="mt-4">
-                        <h2>Areas</h2>
-                        <!-- Area Listings -->
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title">Downtown Austin</h5>
-                                <p class="card-text">The heart of the city with vibrant nightlife and music scenes.</p>
-                                <span class="badge badge-danger">Score: 4/10</span>
-                            </div>
-                        </div>
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title">East Side</h5>
-                                <p class="card-text">Up and coming area, lots of new things to do.</p>
-                                <span class="badge badge-danger">Score: 7/10</span>
-                            </div>
-                        </div>
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title">East Riverside</h5>
-                                <p class="card-text">Becoming a better place to live but don't go too far east/south</p>
-                                <span class="badge badge-danger">Score: 6/10</span>
-                            </div>
-                        </div>
-                        <!-- Add more listings here -->
-                    </section>
-                </div>
-            </div>
-        </div>
-        
-       
-        
+    <script>
+        // Include your data
+        austinData = {
+            generalInfo: 'Austin is the capital of Texas and is known for its live music scene, parks, and lakes. The city is also home to a vibrant food scene and a variety of cultural institutions.',
+            restaurants: [
+                { name: 'Distant Relatives', description: 'Food truck in Meanwhile Brewing Co.', cost: '$$', get: ['Quarter Chicken', 'Brisket Sandwich'] },
+                { name: 'Loro', description: 'Asian smokehouse and bar', cost: '$$', get: ['Smoked Beef Brisket', 'Pork Belly'] },
+                { name: 'Uchi', description: 'Upscale Japanese dining', cost: '$$$$', get: ['Hamachi Nabe', 'Walu Walu'] }
+            ],
+            events: [
+                { name: 'Austin City Limits Music Festival', description: 'Annual music festival held in Zilker Park', date: 'October 1-3, 2021' },
+                { name: 'SXSW', description: 'Annual festival celebrating the convergence of the interactive, film, and music industries', date: 'March 11-20, 2022' }
+            ],
+            areas: [
+                { name: 'Downtown', description: 'The heart of the city with a variety of restaurants, shops, and entertainment' },
+                { name: 'East Austin', description: 'Known for its food trucks, art galleries, and vibrant nightlife' }
+            ],
+            bars: [
+                { name: 'Whisler\'s', description: 'Craft cocktails in a historic building', cost: '$$', get: ['Old Fashioned', 'Mezcal Mule'] },
+                { name: 'The Roosevelt Room', description: 'Upscale bar with a variety of cocktails', cost: '$$$', get: ['The Roosevelt', 'The Gin Fizz'] }
+            ]
+        };
+        const app = Vue.createApp({
+            data() {
+                return {
+                    austinTabs: [
+                        { name: 'General Info', content: austinData.generalInfo },
+                        { name: 'Restaurants', content: austinData.restaurants },
+                        // { name: 'Events', content: austinData.events },
+                        // { name: 'Areas', content: austinData.areas },
+                        // { name: 'Bars', content: austinData.bars }
+                    ]
+                };
+            },
+            components: {
+                'city-info-component': CityInfoComponent,
+                'tab-component': TabComponent,
+                'listing-component': ListingComponent
+            }
+        });
+        app.component('header-component', HeaderComponent);
+        app.component('footer-component', FooterComponent);
+        app.mount('#app');
 
-        
-
-
-
-    <footer class="footer mt-5 py-3 bg-dark">
-        <div class="container text-center">
-            <p>Follow us on social media:</p>
-            <div>
-                <!-- Example Social Media Icons -->
-                <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
-            </div>
-            <span class="text-muted">© 2024 Nomadic Journey</span>
-        </div>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/your-kit-code.js"></script>
+    </script>
 </body>
 </html>

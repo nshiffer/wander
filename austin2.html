@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... other head elements ... -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* ... previous styles ... */
+
+        /* Additional styles for the new components */
+        .cost-indicator {
+            font-size: 2rem;
+            color: #4caf50; /* Adjust color as needed */
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <city-info-component :info="austinData.generalInfo"></city-info-component>
+    </div>
+
+    <!-- Include Vue and your component scripts -->
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="GeneralInfoComponent.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    austinData: {
+                        // ... data for Austin including generalInfo
+                    }
+                };
+            },
+            components: {
+                'city-info-component': GeneralInfoComponent
+            }
+        });
+        app.mount('#app');
+    </script>
+</body>
+</html>
