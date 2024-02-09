@@ -1,7 +1,12 @@
 import RestaurantComponent from './RestaurantComponent.js';
 import GeneralInfoComponent from './GeneralInfoComponent.js';
 const TabComponent = {
-    props: ['tab'],
+    props: {
+        tab: {
+            type: Object,
+            required: true
+        },
+    },
     template: `
         <div class="tab-pane">
             <h2>{{ tab.name }}</h2>
