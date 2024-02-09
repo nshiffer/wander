@@ -27,6 +27,7 @@ const app = Vue.createApp({
                 { name: 'The Roosevelt Room', description: 'Upscale bar with a variety of cocktails', cost: '$$$', get: ['The Roosevelt', 'The Gin Fizz'] }
             ]
         };
+        console.log(austinData);
         return {
             austinTabs: [
                 { name: 'General Info', content: austinData.generalInfo },
