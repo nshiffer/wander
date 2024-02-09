@@ -1,4 +1,4 @@
-export const ListingComponent = {
+export const RestaurantComponent = {
     props: ['item'],
     template: `
         <div class="card mb-3 shadow-lg">
