@@ -1,4 +1,4 @@
-const HeaderComponent = {
+export const HeaderComponent = {
     template: `
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
