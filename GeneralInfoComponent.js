@@ -19,6 +19,7 @@ const GeneralInfoComponent = {
                         <h5 class="card-title">Average Temperature</h5>
                         <p class="card-temp" :style="{ color: temperatureColor(info.temperature) }">{{ info.temperature }}°</p>
                     </div>
+                </div>
 
                 <!-- Walkability Card -->
                 <div class="card text-center">
