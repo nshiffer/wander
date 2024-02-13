@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work and Wander</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="HeaderComponent.js"></script>
+    <script src="FooterComponent.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header-component></header-component>
+
+        <header class="jumbotron jumbotron-fluid text-center">
+            <div class="container">
+                <h1 class="display-4">Follow as we explore the world</h1>
+                <p class="lead">Two 20-somethings working remotely and traveling the world</p>
+            </div>
+        </header>
+
+        <!-- Map Container -->
+        <div id="map" style="height: 500px;" class="container mt-5"></div>
+
+        <footer-component></footer-component>
+        <script>
+            const app = Vue.createApp({});
+            app.component('header-component', HeaderComponent);
+            app.component('footer-component', FooterComponent);
+            app.mount('#app');
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- FontAwesome for Icons -->
+        <script src="https://kit.fontawesome.com/your-kit-code.js"></script>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+        <script>
+            var map = L.map('map').setView([37.8, -96], 4); // Center on the US
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            // Example Marker for Austin with HTMX Integration
+            var austinMarker = L.marker([30.2672, -97.7431]).addTo(map);
+            austinMarker.bindPopup('<b>Austin, TX</b><br><a href="austin.html" hx-get="austin.html" hx-trigger="click">Explore Austin</a>');
+
+            var atlantaMarker = L.marker([33.7490, -84.3880]).addTo(map);
+            atlantaMarker.bindPopup('<b>Atlanta, GA</b><br><a href="#" hx-get="atlanta.html" hx-trigger="click">Explore Atlanta</a>');
+
+            var raleighMarker = L.marker([35.7796, -78.6382]).addTo(map);
+            raleighMarker.bindPopup('<b>Raleigh, NC</b><br><a href="#" hx-get="raleigh.html" hx-trigger="click">Explore Raleigh</a>');
+
+            var columbusMarker = L.marker([39.9612, -82.9988]).addTo(map);
+            columbusMarker.bindPopup('<b>Columbus, OH</b><br><a href="#" hx-get="columbus.html" hx-trigger="click">Explore Columbus</a>');
+
+            
+            // Repeat for other cities as needed
+        </script>
+    </div>
+</body>
+</html>
