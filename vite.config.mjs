@@ -26,6 +26,9 @@ export default defineConfig({
       },
     }),
   ],
+  base: process.env.NODE_ENV === 'production'
+    ? '/wander/'
+    : '/',
   define: { 'process.env': {} },
   resolve: {
     alias: {
